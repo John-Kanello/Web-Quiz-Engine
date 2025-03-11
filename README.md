@@ -61,7 +61,13 @@ The **Quiz Web Application** is a RESTful API built using **Spring Boot 3.2.0** 
 - **Get all quizzes**
 
   ```http
-  GET /api/quizzes
+  GET /api/quizzes?page={number}
+  ```
+
+- **Get all completed quizzes for authenticated user**
+
+  ```http
+  GET /api/quizzes/completed?page={number}
   ```
 
 - **Answer a quiz**
