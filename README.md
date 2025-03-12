@@ -99,5 +99,3 @@ The application uses **Basic Authentication**. After registration, users must pr
 ```
 Authorization: Basic base64(email:password)
 ```
-
-Developed with ❤️ using **Spring Boot**.
