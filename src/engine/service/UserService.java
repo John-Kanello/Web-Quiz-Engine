@@ -1,7 +1,7 @@
 package engine.service;
 
-import engine.model.user.User;
-import engine.model.user.UserDto;
+import engine.model.entity.User;
+import engine.model.dto.request.UserDto;
 import engine.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

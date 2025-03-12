@@ -1,4 +1,4 @@
-package engine.model.user;
+package engine.model.entity;
 
 import jakarta.persistence.*;
 

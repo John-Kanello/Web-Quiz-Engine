@@ -1,14 +1,13 @@
 package engine.service;
 
-import engine.model.quiz.Quiz;
-import engine.model.quiz.QuizCreationDto;
+import engine.model.entity.Quiz;
+import engine.model.dto.request.QuizCreationDto;
 import engine.repository.QuizRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 @Service

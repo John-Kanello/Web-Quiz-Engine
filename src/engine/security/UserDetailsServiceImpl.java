@@ -1,6 +1,6 @@
 package engine.security;
 
-import engine.model.user.User;
+import engine.model.entity.User;
 import engine.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

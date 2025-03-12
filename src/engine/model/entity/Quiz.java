@@ -1,6 +1,5 @@
-package engine.model.quiz;
+package engine.model.entity;
 
-import engine.model.user.User;
 import jakarta.persistence.*;
 
 import java.util.List;

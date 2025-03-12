@@ -1,4 +1,4 @@
-package engine.model.quiz;
+package engine.model.dto.response;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

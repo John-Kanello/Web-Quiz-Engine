@@ -1,7 +1,9 @@
 package engine.controller;
 
-import engine.model.quiz.*;
-import engine.model.user.User;
+import engine.model.dto.request.QuizAnswerDto;
+import engine.model.dto.request.QuizCreationDto;
+import engine.model.dto.response.*;
+import engine.model.entity.*;
 import engine.service.QuizCompletionService;
 import engine.service.QuizService;
 import engine.service.UserService;
@@ -106,9 +108,9 @@ public class QuizController {
     }
 
     @PostMapping("/{id}/solve")
-    public ResponseEntity<QuizResult> uploadAnswer(@PathVariable("id") int id,
-                                                   @RequestBody QuizAnswer quizAnswer,
-                                                   @AuthenticationPrincipal UserDetails userDetails) {
+    public ResponseEntity<QuizResultDto> uploadAnswer(@PathVariable("id") int id,
+                                                      @RequestBody QuizAnswerDto quizAnswer,
+                                                      @AuthenticationPrincipal UserDetails userDetails) {
         Optional<Quiz> quizOptional = quizService.findById(id);
         if(quizOptional.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -116,7 +118,7 @@ public class QuizController {
         Quiz quiz = quizOptional.get();
         if(!equalLists(quiz.getAnswer(), quizAnswer.answer())) {
             return ResponseEntity.ok()
-                    .body(new QuizResult(false, "Wrong answer! Please, try again."));
+                    .body(new QuizResultDto(false, "Wrong answer! Please, try again."));
         }
         String email = userDetails.getUsername();
         User user = userService.findByEmail(email).orElseThrow();
@@ -124,7 +126,7 @@ public class QuizController {
         quiz.getCompletedQuizzes().add(completedQuiz);
         quizCompletionService.save(completedQuiz);
         return ResponseEntity.ok()
-                .body(new QuizResult(true, "Congratulations, you're right!"));
+                .body(new QuizResultDto(true, "Congratulations, you're right!"));
     }
 
     private <T> boolean equalLists(List<T> list1, List<T> list2) {

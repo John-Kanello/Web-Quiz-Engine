@@ -1,6 +1,6 @@
 package engine.controller;
 
-import engine.model.user.UserDto;
+import engine.model.dto.request.UserDto;
 import engine.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package engine.service;
 
-import engine.model.quiz.CompletedQuiz;
+import engine.model.entity.CompletedQuiz;
 import engine.repository.QuizCompletionRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

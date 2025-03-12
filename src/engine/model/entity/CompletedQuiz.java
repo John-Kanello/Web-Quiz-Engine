@@ -1,4 +1,4 @@
-package engine.model.quiz;
+package engine.model.entity;
 
 import jakarta.persistence.*;
 
