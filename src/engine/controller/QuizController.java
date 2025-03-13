@@ -31,11 +31,11 @@ public class QuizController {
     private final QuizMapper quizMapper;
 
     public QuizController(QuizService service,
-                          QuizCompletionService completedQuizService,
+                          QuizCompletionService quizCompletionService,
                           UserService userService,
                           QuizMapper quizMapper) {
         this.quizService = service;
-        this.quizCompletionService = completedQuizService;
+        this.quizCompletionService = quizCompletionService;
         this.userService = userService;
         this.quizMapper = quizMapper;
     }
